@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Runnit Errands - Life's busy. We Runnit.</title>
+    <!-- Description that appears below your title on Google Search -->
+    <meta name="description" content="Life gets busy. Runnit Errands handles your daily to-do list—from quick grocery runs and urgent deliveries to long lines and custom tasks. Quick, friendly, and reliable service.">
+    <!-- Telling search engines what your site is about -->
+    <meta name="keywords" content="errand services, personal assistant, grocery delivery, courier, runnit errands">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Inline SVG Favicon for the Browser Tab (Gold Styled 'R') -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-family=%22Montserrat, sans-serif%22 font-weight=%22700%22 font-size=%2280%22 fill=%22%23D4AF37%22>R</text></svg>">
+
+    <!-- Google Fonts for Friendly & Premium Typography + Script Accent to match the Logo Tagline -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Library for Premium Scroll Animations -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+    <style>
+        /* --- CSS VARIABLES & PALETTE --- */
+        :root {
+            --navy-primary: #0A1B3A; /* Enhanced deep midnight blue from logo background */
+            --navy-dark: #050E21;
+            --gold-primary: #DCAE42; /* Vibrant warm amber gold directly matched from logo */
+            --gold-hover: #F2C94C;
+            --white-pure: #FFFFFF;
+            --white-bg: #F4F6F9;
+            --text-dark: #1E293B;
+            --text-muted: #64748B;
+            --card-radius: 16px;
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        /* --- BASE STYLES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--white-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        section {
+            padding: 100px 8% 80px 8%;
+        }
+
+        .btn-gold {
+            background-color: var(--gold-primary);
+            color: var(--navy-dark);
+            padding: 16px 36px;
+            font-weight: 700;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.95rem;
+            box-shadow: 0 4px 14px rgba(220, 174, 66, 0.3);
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(220, 174, 66, 0.5);
+        }
+
+        /* --- NAVIGATION --- */
+        nav {
+            background-color: rgba(5, 14, 33, 0.92);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition-smooth);
+        }
+
+        .logo {
+            color: var(--white-pure);
+            font-size: 1.4rem;
+            letter-spacing: 1px;
+            font-weight: 800;
+        }
+
+        .logo span {
+            color: var(--gold-primary);
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #CBD5E1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            position: relative;
+            padding: 5px 0;
+            transition: var(--transition-smooth);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--gold-primary);
+            transition: var(--transition-smooth);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        nav ul li a:hover {
+            color: var(--white-pure);
+        }
+
+        /* --- HERO SECTION WITH ANIMATED FLUID GRADIENT --- */
+        .hero {
+            height: 95vh;
+            background: linear-gradient(-45deg, #050E21, #0A1B3A, #16326C, #050E21);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            color: var(--white-pure);
+            position: relative;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .hero h1 span {
+            color: var(--gold-primary);
+        }
+        
+        .hero .logo-tagline {
+            font-family: 'Caveat', cursive;
+            font-size: 2.8rem;
+            color: var(--white-pure);
+            display: block;
+            margin-top: 10px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 580px;
+            margin-bottom: 40px;
+            color: #E2E8F0;
+            font-weight: 400;
+        }
+
+        /* --- VALUE PROPOSITION CARDS --- */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            background-color: var(--white-pure);
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            border-radius: var(--card-radius);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+            padding: 50px 40px;
+        }
+
+        .feature-card {
+            text-align: center;
+            padding: 20px;
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card .icon-wrapper {
+            width: 70px;
+            height: 70px;
+            background: rgba(10, 27, 58, 0.05);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover .icon-wrapper {
+            background-color: var(--gold-primary);
+            transform: rotateY(180deg);
+        }
+
+        .feature-card:hover i {
+            color: var(--navy-dark);
+        }
+
+        .feature-card i {
+            font-size: 1.8rem;
+            color: var(--navy-primary);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--navy-dark);
+            font-weight: 700;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- SERVICES GRID --- */
+        .services-section {
+            background-color: var(--white-bg);
+            text-align: center;
+        }
+
+        .section-header {
+            font-size: 2.5rem;
+            color: var(--navy-dark);
+            margin-bottom: 10px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        .section-sub {
+            color: var(--text-muted);
+            margin-bottom: 60px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+     /* --- SERVICES GRID STRUCTURE --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 35px; 
+            padding-bottom: 40px; /* Extra room for the physical jump */
+        }
+
+        /* --- INDIVIDUAL SERVICE CARDS --- */
+        .service-card {
+            background-color: var(--white-pure);
+            padding: 40px 30px;
+            border-radius: var(--card-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            text-align: left;
+            border: 1px solid rgba(10, 27, 58, 0.04);
+            position: relative;
+            /* Smoothly brings the card back down when mouse leaves */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+        }
+
+       /* --- ENFORCED BOUNCE ANIMATION ON HOVER --- */
+        .service-card:hover {
+            animation: cardBounce 0.7s ease forwards; /* Triggers the keyframes */
+            box-shadow: 0 26px 40px rgba(0, 0, 0, 0.22) !important;
+            border-color: var(--gold-primary) !important;
+            z-index: 5;
+            border: #030917;
+            
+            /* Keeps the card up at its final position after bouncing */
+            transform: translateY(-16px) scale(1.04); 
+        }
+
+        /* The step-by-step physics of the bounce */
+        @keyframes cardBounce {
+            0% {
+                transform: translateY(0) scale(1);
+            }
+            30% {
+                transform: translateY(-20px) scale(1.05); /* Shoots up slightly higher */
+            }
+            60% {
+                transform: translateY(-12px) scale(1.03); /* Drops down a bit */
+            }
+            100% {
+                transform: translateY(-16px) scale(1.04); /* Settles perfectly at final height */
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        .service-card i {
+            font-size: 2.2rem;
+            color: var(--gold-primary);
+            margin-bottom: 25px;
+            display: inline-block;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover i {
+            transform: scale(1.15) rotate(-5px);
+        }
+
+        .service-card h3 {
+            font-size: 1.25rem;
+            color: var(--navy-dark);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .service-card.highlight {
+            background: linear-gradient(135deg, var(--navy-dark), var(--navy-primary));
+            border: none;
+        }
+        
+        .service-card.highlight h3 { color: var(--white-pure); }
+        .service-card.highlight p { color: #94A3B8; }
+        .service-card.highlight i { color: var(--gold-primary); }
+        /* --- PREMIUM BESPOKE CARD STYLING --- */
+       /* --- LINK WRAPPER FIX (Forces card to match identical size) --- */
+        .bespoke-card-link {
+            text-decoration: none;
+            color: inherit;
+            display: flex; /* Crucial: passes the grid structure down to the card */
+            height: 100%;  /* Syncs height perfectly with neighboring cards */
+            cursor: pointer;
+        }
+
+        .bespoke-card-link .service-card {
+           background-color: var(--white-pure);
+            padding: 40px 30px;
+            border-radius: var(--card-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            text-align: left;
+            border: 1px solid rgba(10, 27, 58, 0.04);
+            position: relative;
+            /* Smoothly brings the card back down when mouse leaves */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+        }
+
+
+        /* --- BESPOKE CARD CORE STYLE --- */
+        .bespoke-card {
+             background-color: var(--white-pure);
+            padding: 40px 30px;
+            border-radius: var(--card-radius);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02);
+            text-align: left;
+            border: 1px solid rgba(10, 27, 58, 0.04);
+            position: relative;
+            /* Smoothly brings the card back down when mouse leaves */
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; 
+        }
+
+        .plus-badge {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background: rgba(220, 174, 66, 0.15);
+            border: 1px solid rgba(220, 174, 66, 0.4);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+            pointer-events: none; 
+        }
+
+        .plus-badge span {
+            color: var(--gold-primary);
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 1;
+            display: block;
+            margin-top: -3px;
+            pointer-events: none; 
+        }
+
+        /* --- UPDATED HOVER STATES TO TRIGGER THROUGH LINK --- */
+        .bespoke-card-link:hover .service-card {
+            animation: cardBounce 0.6s ease forwards;
+            box-shadow: 0 26px 40px rgba(0, 0, 0, 0.22) !important;
+            border-color: var(--gold-primary) !important;
+            z-index: 5;
+            transform: translateY(-16px) scale(1.04); 
+            border: #030917;
+        }
+
+        .bespoke-card-link:hover .plus-badge {
+            background-color: var(--gold-primary);
+            border-color: var(--gold-primary);
+            transform: scale(1.15) rotate(90deg); 
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+            border: #000000;
+        }
+
+        .bespoke-card-link:hover .plus-badge span {
+            color: var(--navy-dark); 
+            font-weight: 700;
+        }
+
+        /* --- HOW IT WORKS STEP TIMELINE --- */
+        .process {
+            background-color: var(--white-pure);
+            text-align: center;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            padding: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .process-step:hover .step-num {
+            transform: scale(1.1);
+            background-color: var(--gold-primary);
+            color: var(--navy-dark);
+        }
+
+        .step-num {
+            width: 60px;
+            height: 60px;
+            background-color: var(--navy-primary);
+            color: var(--white-pure);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin: 0 auto 25px auto;
+            box-shadow: 0 8px 16px rgba(10, 27, 58, 0.15);
+            transition: var(--transition-smooth);
+        }
+
+        .process-step h3 {
+            color: var(--navy-dark);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        
+        .process-step p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        /* --- FAQ ACCORDION SECTION --- */
+        .faq-section {
+            background-color: var(--white-bg);
+            text-align: center;
+        }
+
+        .faq-container {
+            max-width: 750px;
+            margin: 40px auto 0 auto;
+            text-align: left;
+        }
+
+        .faq-item {
+            background-color: var(--white-pure);
+            margin-bottom: 15px;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid rgba(10, 27, 58, 0.03);
+            transition: var(--transition-smooth);
+        }
+
+        .faq-question {
+            padding: 24px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--navy-dark);
+            user-select: none;
+        }
+
+        .faq-question:hover {
+            color: var(--gold-primary);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            color: var(--text-muted);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), padding 0.35s ease;
+            padding: 0 30px;
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .faq-item.active {
+            background-color: var(--white-pure);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.04);
+            border-color: rgba(220, 174, 66, 0.2);
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 25px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--gold-primary);
+        }
+
+        /* --- FOUNDERS PROFILE PORTRAIT CAPSULES --- */
+        .founders {
+            background-color: var(--navy-dark);
+            color: var(--white-pure);
+            text-align: center;
+        }
+        
+        .founders .section-header {
+            color: var(--white-pure);
+        }
+
+        .founders-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+
+        .founder-profile {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 40px;
+            border-radius: var(--card-radius);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            min-width: 300px;
+            transition: var(--transition-smooth);
+        }
+
+        .founder-profile:hover {
+            border-color: var(--gold-primary);
+            background: rgba(255, 255, 255, 0.04);
+            transform: translateY(-5px);
+        }
+
+        .founder-avatar {
+            width: 75px;
+            height: 75px;
+            background: rgba(220, 174, 66, 0.1);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 20px auto;
+            font-size: 1.8rem;
+            color: var(--gold-primary);
+        }
+
+        .founder-profile h3 {
+            font-size: 1.3rem;
+            margin-bottom: 6px;
+            font-weight: 700;
+        }
+
+        .founder-profile p {
+            color: var(--gold-primary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* --- FOOTER CONTENT BLOCKS --- */
+        footer {
+            background-color: #030917;
+            color: #94A3B8;
+            padding: 60px 8% 30px 8%;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-block h4 {
+            color: var(--white-pure);
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .footer-block p, .footer-block a {
+            color: #94A3B8;
+            text-decoration: none;
+            margin-bottom: 12px;
+            display: block;
+            font-size: 0.95rem;
+        }
+
+        .footer-block a:hover {
+            color: var(--gold-primary);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.85rem;
+            color: #64748B;
+        }
+
+        /* --- FLOATING INTERACTIVE WHATSAPP WIDGET --- */
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25D366;
+            color: var(--white-pure);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            animation: pulseWhatsApp 2s infinite;
+        }
+
+        @keyframes pulseWhatsApp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        .whatsapp-widget:hover {
+            transform: scale(1.1) translateY(-3px);
+            background-color: #20ba5a;
+        }
+
+        /* --- RESPONSIVE STRUCTURAL OVERRIDES --- */
+        @media (max-width: 968px) {
+            .features, .process-grid {
+                grid-template-columns: 1fr;
+            }
+            .features {
+                margin-top: 20px;
+                padding: 30px 20px;
+            }
+            .hero {
+                height: auto;
+                padding: 140px 8% 80px 8%;
+            }
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            nav ul {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION BAR -->
+    <nav>
+        <div class="logo">RUNNIT <span>— ERRANDS —</span></div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#faq">FAQ</a></li>
+            <li><a href="#team">Team</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="hero">
+        <div data-aos="fade-right" data-aos-duration="1000">
+            <h1>Your To-Do List.<br><span class="logo-tagline">Life's busy. We Runnit.</span></h1>
+            <p style="margin-top: 15px;">Life moves fast. We take care of your daily runs, grocery shopping, deliveries, and random tasks so you can finally catch a break.</p>
+            <a href="https://wa.me/254716097755" class="btn-gold" target="_blank">Let Us Run Your Errands</a>
+        </div>
+    </section>
+
+    <!-- CORE VALUE PROPOSITION -->
+    <section class="features" data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">
+        <div class="feature-card">
+            <div class="icon-wrapper"><i class="fa-solid fa-face-smile"></i></div>
+            <h3>Super Reliable</h3>
+            <p>We treat your tasks like our own. Safe, fast, and handled with absolute care.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon-wrapper"><i class="fa-solid fa-bolt"></i></div>
+            <h3>Hours Saved</h3>
+            <p>Skip the traffic and long queues. Get your weekends and evenings back.</p>
+        </div>
+        <div class="feature-card">
+            <div class="icon-wrapper"><i class="fa-solid fa-lock"></i></div>
+            <h3>100% Safe & Secure</h3>
+            <p>Your items, documents, and privacy are completely protected at every step.</p>
+        </div>
+    </section>
+
+    <!-- SERVICES MENU GRID -->
+    <section id="services" class="services-section">
+        <h2 class="section-header" data-aos="fade-up">What We Can Do For You</h2>
+        <p class="section-sub" data-aos="fade-up" data-aos-delay="100">From quick cross-town drops to daily household chores</p>
+        
+        <div class="services-grid">
+            <div class="service-card" data-aos="fade-up" data-aos-delay="50">
+                <i class="fa-solid fa-basket-shopping"></i>
+                <h3>Groceries & Shopping</h3>
+                <p>Send us your exact list. We'll shop, pick out the freshest items, and deliver right to your kitchen.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="100">
+                <i class="fa-solid fa-motorcycle"></i>
+                <h3>Quick Safe Delivery</h3>
+                <p>Need a package, gift, or key dropped off instantly? We track it from hand to hand safely.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="150">
+                <i class="fa-solid fa-folder-open"></i>
+                <h3>Important Documents</h3>
+                <p>Safe and completely confidential delivery for legal paperwork, contracts, or office files.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                <i class="fa-solid fa-receipt"></i>
+                <h3>Bills & Banking Runs</h3>
+                <p>Let us handle your physical banking errands or instant utility bill payments securely.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="250">
+                <i class="fa-solid fa-prescription-bottle-medical"></i>
+                <h3>Pharmacy Pickups</h3>
+                <p>Running low on essentials? We'll pick up your prescriptions and bring them straight home.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                <i class="fa-solid fa-socks"></i>
+                <h3>Laundry Logistics</h3>
+                <p>We drop off or collect your dry cleaning, making sure everything is handled flawlessly.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="350">
+                <i class="fa-solid fa-gift"></i>
+                <h3>Gifts & Flowers</h3>
+                <p>Perfect for birthdays or surprises. We'll pick out the item, wrap it, and deliver the smile.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                <i class="fa-solid fa-hourglass-end"></i>
+                <h3>Queue Standing</h3>
+                <p>Don't waste hours waiting around for government services or tickets. Let us hold your spot.</p>
+            </div>
+            <div class="service-card" data-aos="fade-up" data-aos-delay="450">
+                <i class="fa-solid fa-building-user"></i>
+                <h3>Office Support</h3>
+                <p>Helping small businesses stay efficient by running quick commercial logistics daily.</p>
+            </div>
+           <div class="service-card highlight bespoke-card" data-aos="fade-up" data-aos-delay="500">
+    <a href="https://wa.me/254716097755?text=Hi!%20I%20have%20a%20unique%20bespoke%20task%20request%20for%20my%20business.%20I'd%20love%20to%20map%20out%20a%20tailored%20solution%20with%20you." 
+   target="_blank" 
+   class="bespoke-card-link" 
+   style="text-decoration: none; display: block; color: inherit;">
+   
+    <div class="service-card highlight bespoke-card" data-aos="fade-up" data-aos-delay="500">
+        <!-- Floating Interactive Plus Badge -->
+        <div class="plus-badge">
+            <span>+</span>
+        </div>
+        
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+        <h3>Bespoke Tasks</h3>
+        <p>Have a unique or highly customized operational request? Let us know and we will map out a tailored solution.</p>
+    </div>
+</a>
+   
+    </section>
+
+    <!-- HOW IT WORKS TIMELINE -->
+    <section id="how-it-works" class="process">
+        <h2 class="section-header" data-aos="fade-up">Getting It Done Is Easy</h2>
+        <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Just three quick steps to crossing that task off your list</p>
+        
+        <div class="process-grid">
+            <div class="process-step" data-aos="zoom-in" data-aos-delay="100">
+                <div class="step-num">1</div>
+                <h3>Send a Message</h3>
+                <p>Click our chat widget to connect instantly via WhatsApp.</p>
+            </div>
+            <div class="process-step" data-aos="zoom-in" data-aos-delay="200">
+                <div class="step-num">2</div>
+                <h3>Share the Task</h3>
+                <p>Tell us exactly what you need done and when you need it.</p>
+            </div>
+            <div class="process-step" data-aos="zoom-in" data-aos-delay="300">
+                <div class="step-num">3</div>
+                <h3>Track & Relax</h3>
+                <p>Our friendly runner takes care of it and updates you along the way.</p>
+            </div>
+            <div class="process-step" data-aos="zoom-in" data-aos-delay="400">
+                <div class="step-num">4</div>
+                <h3>All Done!</h3>
+                <p>Your task is securely completed and receipts are delivered.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="faq-section">
+        <h2 class="section-header" data-aos="fade-up">Got Questions?</h2>
+        <p class="section-sub" data-aos="fade-up" data-aos-delay="100">Quick answers to clear things up</p>
+        
+        <div class="faq-container" data-aos="fade-up" data-aos-delay="200">
+            <div class="faq-item">
+                <div class="faq-question">
+                    How fast do you complete tasks?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Most standard errands are fully wrapped up in 1 to 3 hours. If you've got an urgent deadline, let us know right away on WhatsApp so we can get a runner dispatched immediately.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    How do shopping funds work?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>For shopping, store pickups, or utility payments, the funds are securely sent to us ahead of the errand. Your assigned runner handles the payment and sends you crisp photo receipts right away.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    Are my high-value items secure?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. Security is everything to us. Our errand specialists are thoroughly vetted and trained to follow strict safety protocols, ensuring everything from legal papers to sensitive items arrives perfectly intact.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    What are your active hours?
+                    <i class="fa-solid fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>We are out running errands from Monday to Saturday, between 8:00 AM and 7:00 PM. If you have recurring small business needs outside these hours, chat with us to plan ahead.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOUNDERS PROFILE SECTION -->
+    <section id="team" class="founders">
+        <h2 class="section-header" data-aos="fade-up">Meet The Team</h2>
+        <p class="section-sub" style="color: #94A3B8;" data-aos="fade-up" data-aos-delay="100">The friendly faces making it happen behind the scenes</p>
+        
+        <div class="founders-container">
+            <div class="founder-profile" data-aos="fade-right" data-aos-delay="200">
+                <div class="founder-avatar"><i class="fa-solid fa-user-tie"></i></div>
+                <h3>Jaden Murimi</h3>
+                <p>Co-Founder & Operations</p>
+            </div>
+            <div class="founder-profile" data-aos="fade-left" data-aos-delay="300">
+                <div class="founder-avatar"><i class="fa-solid fa-user-gear"></i></div>
+                <h3>Josephine Murimi</h3>
+                <p>Co-Founder & Customer Relations</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER AREA -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-block">
+                <h4>RUNNIT — ERRANDS —</h4>
+                <p>Taking care of the little things so you can keep running your world with zero stress.</p>
+            </div>
+            <div class="footer-block">
+                <h4>Get In Touch</h4>
+                <a href="tel:0716097755"><i class="fa-solid fa-phone"></i> 0716097755</a>
+                <a href="tel:0721850258"><i class="fa-solid fa-phone"></i> 0721850258</a>
+                <a href="mailto:jaymurimiq@gmail.com"><i class="fa-solid fa-envelope"></i> jaymurimiq@gmail.com</a>
+            </div>
+            <div class="footer-block">
+                <h4>Operating Hours</h4>
+                <p><i class="fa-solid fa-clock"></i> Mon – Sat: 8:00 AM – 7:00 PM</p>
+                <p><i class="fa-solid fa-location-dot"></i> Serving your city & surrounding neighborhoods.</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Runnit Errands. All Rights Reserved. Built to clear your to-do list.
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP BUTTON CHAT WIDGET -->
+    <a href="https://wa.me/254716097755" class="whatsapp-widget" target="_blank" title="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPT FOR FAQ TOGGLE ACCORDION -->
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                const answer = question.nextElementSibling;
+                
+                item.classList.toggle('active');
+                
+                if (item.classList.contains('active')) {
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                } else {
+                    answer.style.maxHeight = "0px";
+                }
+            });
+        });
+    </script>
+
+    <!-- AOS ANIMATION ENGINE INITIALIZATION SCRIPT -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            offset: 120, 
+            duration: 800, 
+            easing: 'ease-out-cubic', 
+            once: true 
+        });
+    </script>
+   <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const bespokeCard = document.getElementById('bespokeCard');
+    
+    if (bespokeCard) {
+        bespokeCard.addEventListener('click', function(e) {
+            // Prevent any parent elements from conflicting with the click
+            e.stopPropagation(); 
+            
+            // Your active WhatsApp Business line
+            const phoneNumber = "254716097755"; 
+            
+            const message = "Hi! I have a unique bespoke task request for my business. I'd love to map out a tailored solution with you.";
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Opens WhatsApp securely in a new tab
+            window.open(whatsappUrl, '_blank');
+        });
+    }
+});
+</script>
+
+</body>
+</html>
