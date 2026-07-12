@@ -735,6 +735,127 @@
             nav ul {
                 display: none;
             }
+            /* ==========================================================================
+           COMPREHENSIVE MOBILE-RESPONSIVE SYSTEM (Media Queries)
+           ========================================================================== */
+
+        /* 1. TABLET LAYOUT TWEAKS (Screens under 1024px) */
+        @media (max-width: 1024px) {
+            .container {
+                width: 90%;
+                padding: 0 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr) !important; /* Standardizes layout down to 2 columns */
+                gap: 25px;
+            }
+            
+            /* Scales large text sizes down smoothly */
+            h1 { font-size: 2.8rem; }
+            h2 { font-size: 2.2rem; }
+        }
+
+        /* 2. MOBILE PHONE OVERHAUL (Screens under 768px) */
+        @media (max-width: 768px) {
+            /* Structural Section Padding Tweak */
+            section {
+                padding: 60px 0; /* Shrinks dense space top and bottom for vertical scroll ease */
+            }
+
+            /* Responsive Global Containers */
+            .container {
+                width: 100%;
+                padding: 0 24px; /* Keeps consistent margins away from direct glass edge */
+                box-sizing: border-box;
+            }
+
+            /* Main Header & Desktop Navigation Collapse */
+            .nav-container {
+                padding: 15px 20px;
+                flex-direction: column; /* Stacks logo over menu links if needed */
+                gap: 15px;
+                text-align: center;
+            }
+
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap; /* Wraps wide menu choices cleanly on tiny widths */
+                justify-content: center;
+                gap: 15px 20px;
+            }
+
+            /* Hero Layout Structure */
+            .hero-content {
+                text-align: center;
+                padding: 40px 0;
+            }
+
+            .hero-buttons {
+                display: flex;
+                flex-direction: column; /* Stacks CTA call-to-actions vertically */
+                width: 100%;
+                gap: 12px;
+            }
+
+            .btn {
+                width: 100%; /* Spans full buttons horizontally for easier thumb-tapping */
+                text-align: center;
+                padding: 16px 24px;
+            }
+
+            /* Enforced Grid-to-Single-Column Transitions */
+            .services-grid {
+                grid-template-columns: 1fr !important; /* Locks all cards to stack perfectly uniform */
+                gap: 25px;
+            }
+
+            /* Responsive Font Hierarchy Engine */
+            h1 {
+                font-size: 2.2rem !important;
+                line-height: 1.2;
+                letter-spacing: -0.5px;
+            }
+
+            h2 {
+                font-size: 1.8rem !important;
+                margin-bottom: 15px;
+            }
+
+            h3 {
+                font-size: 1.2rem !important;
+            }
+
+            p {
+                font-size: 0.95rem !important;
+                line-height: 1.6;
+            }
+
+            /* Micro-Interaction Adjustments for Touch Displays */
+            .service-card {
+                padding: 30px 20px; /* Slight padding reduction inside boxes prevents empty void */
+                transform-origin: center center;
+            }
+            
+            /* Optional: Tones down extreme spring jump intensity on delicate touch inputs */
+            .service-card:hover,
+            .bespoke-card-link:hover .service-card {
+                transform: translateY(-8px) scale(1.02) !important;
+            }
+        }
+
+        /* 3. ULTRA-SMALL DISPLAYS (Compact Devices under 480px) */
+        @media (max-width: 480px) {
+            .plus-badge {
+                top: 20px;
+                right: 20px;
+                width: 34px;
+                height: 34px;
+            }
+            .plus-badge span {
+                font-size: 1.3rem;
+            }
+        }
         }
     </style>
 </head>
