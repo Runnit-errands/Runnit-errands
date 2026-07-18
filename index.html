@@ -14,8 +14,10 @@
     <meta name="robots" content="index, follow">
     
     <!-- 1. Left-Side Google Search Icon & Browser Tab Icon Connection (Simplified Graphic) -->
-    <link rel="icon" type="image/png" href="icon.png" />
-    <link rel="shortcut icon" type="image/png" href="icon.png" />
+    <link rel="icon" href="logo.png" sizes="512x512" type="image/png">
+<link rel="shortcut icon" href="logo.png" type="image/png">
+<link rel="apple-touch-icon" href="logo.png">
+<link rel="manifest" href="site.webmanifest">
 
     <!-- 2. Right-Side Google Search Preview Snippet Thumbnail Connection (Full Brand Image) -->
     <meta property="og:image" content="https://runnit-errands.github.io/Runnit-errands/thumbnail.png" />
@@ -868,6 +870,403 @@
             }
         }
         }
+        .clickable-card{
+    cursor:pointer;
+}
+
+.founder-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(5,14,33,.82);
+    backdrop-filter:blur(10px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:.35s ease;
+    z-index:9999;
+    padding:20px;
+}
+
+.founder-modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.modal-content{
+    width:100%;
+    max-width:560px;
+    max-height:85vh;
+     background:linear-gradient(
+        145deg,
+        #0A1B3A,
+        #16326C
+    );
+    border-radius:20px;
+    overflow-y:auto;
+    overflow-x:hidden;
+    position:relative;
+    transform:translateY(25px) scale(.96);
+    transition:.35s ease;
+    box-shadow:0 25px 60px rgba(0,0,0,.25);
+    clip-path: inset(0 round 20px);
+}
+
+.founder-modal.active .modal-content{
+    transform:translateY(0) scale(1);
+}
+
+
+.modal-body{
+    padding:30px;
+    text-align:center;
+}
+
+
+/* close button */
+.close-btn{
+    position:absolute;
+    margin:20px;
+    right:0;
+    font-size:2rem;
+    cursor:pointer;
+    color:#ffffff;
+}
+
+.close-btn:hover{
+    color:var(--gold-primary);
+}
+
+
+/* avatar */
+.modal-avatar-large{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    background:rgba(220,174,66,.15);
+    color:var(--gold-primary);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:2.2rem;
+    margin:0 auto 20px;
+}
+
+
+/* role */
+.modal-role{
+    color:var(--gold-primary);
+    font-weight:600;
+    margin-top:8px;
+}
+
+
+/* divider */
+.modal-divider{
+    margin:30px 0;
+    border:none;
+    height:1px;
+      background:rgba(255,255,255,0.25);
+}
+
+
+/* description */
+.modal-desc{
+    color:#E2E8F0;
+    line-height:1.8;
+    margin:20px 0 30px;
+}
+
+
+/* phone box */
+.modal-contact-row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    text-decoration:none;
+    color:white;
+    padding:16px 18px;
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:14px;
+    margin-bottom:25px;
+    transition:.3s;
+}
+
+
+.modal-contact-row:hover{
+    border-color:var(--gold-primary);
+    transform:translateY(-2px);
+}
+
+
+.modal-contact-icon{
+    width:48px;
+    height:48px;
+    border-radius:50%;
+    background:rgba(220,174,66,.15);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:var(--gold-primary);
+}
+
+
+.modal-contact-text{
+    text-align:left;
+}
+
+
+.modal-contact-label{
+    display:block;
+    font-size:.85rem;
+    color:#CBD5E1;
+}
+
+
+/* specialties */
+.modal-specialties{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    justify-content:center;
+}
+
+
+.modal-specialties span{
+    background:rgba(220,174,66,.15);
+    color:white;
+    padding:10px 16px;
+    border-radius:30px;
+    font-weight:600;
+    font-size:.9rem;
+}
+
+
+.modal-specialties i{
+    color:var(--gold-primary);
+}
+
+
+/* mobile */
+@media(max-width:480px){
+
+    .founder-modal{
+        padding:15px;
+    }
+
+
+    .modal-content{
+        max-height:80vh;
+        border-radius:18px;
+    }
+
+
+    .modal-body{
+        padding:20px;
+    }
+
+
+    .modal-desc{
+        font-size:14px;
+        line-height:1.6;
+    }
+
+
+    .modal-specialties span{
+        font-size:.8rem;
+        padding:8px 12px;
+    }
+
+}
+
+
+/* hide scrollbar */
+.modal-content::-webkit-scrollbar{
+    width:0;
+}
+
+.modal-content{
+    scrollbar-width:none;
+    -webkit-overflow-scrolling:touch;
+}
+/* ===== FOUNDERS MODAL TEXT FIX ===== */
+
+.modal-content h2,
+.modal-content h3,
+.modal-content h4 {
+    color: #FFFFFF;
+}
+
+.modal-content .modal-role {
+    color: var(--gold-primary);
+}
+
+.modal-content .modal-desc {
+    color: #E2E8F0;
+}
+
+.modal-content .modal-contact-text {
+    color: #FFFFFF;
+}
+
+.modal-content .modal-contact-label {
+    color: #CBD5E1;
+}
+
+.modal-content .modal-specialties span {
+    color: #FFFFFF;
+}
+/* ===== Pricing & Areas ===== */
+
+.pricing-area-section{
+    background:#fff;
+}
+
+.pricing-area-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(350px,1fr));
+    gap:35px;
+    margin-top:50px;
+}
+
+.pricing-card,
+.areas-card{
+
+    background:#fff;
+    border-radius:18px;
+    padding:35px;
+    box-shadow:0 12px 30px rgba(0,0,0,.06);
+    border:1px solid rgba(10,27,58,.08);
+    transition:.35s;
+}
+
+.pricing-card:hover,
+.areas-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:var(--gold-primary);
+
+    box-shadow:0 25px 40px rgba(0,0,0,.12);
+
+}
+
+.pricing-card h3,
+.areas-card h3{
+
+    color:var(--navy-dark);
+
+    margin-bottom:25px;
+
+    font-size:1.4rem;
+}
+
+.pricing-card h3 i,
+.areas-card h3 i{
+
+    color:var(--gold-primary);
+
+    margin-right:10px;
+}
+
+.price-item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:1px solid rgba(0,0,0,.06);
+
+    font-weight:600;
+}
+
+.price-item strong{
+
+    color:var(--gold-primary);
+}
+
+.pricing-note{
+
+    margin-top:25px;
+
+    color:var(--text-muted);
+
+    line-height:1.7;
+}
+
+.areas-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:18px;
+
+    margin-top:25px;
+}
+
+.areas-grid div{
+
+    background:rgba(220,174,66,.08);
+
+    border-radius:12px;
+
+    padding:14px;
+
+    font-weight:600;
+
+    color:var(--navy-dark);
+
+    transition:.3s;
+}
+
+.areas-grid div:hover{
+
+    background:var(--gold-primary);
+
+    color:var(--navy-dark);
+
+    transform:translateY(-3px);
+}
+
+.areas-grid i{
+
+    color:var(--gold-primary);
+
+    margin-right:8px;
+}
+
+.areas-grid div:hover i{
+
+    color:var(--navy-dark);
+}
+
+.service-note{
+
+    margin-top:30px;
+
+    background:rgba(10,27,58,.05);
+
+    border-left:4px solid var(--gold-primary);
+
+    padding:18px;
+
+    border-radius:10px;
+
+    color:var(--text-muted);
+
+    line-height:1.6;
+}
+
+.service-note i{
+
+    color:var(--gold-primary);
+
+    margin-right:8px;
+}
     </style>
 </head>
 <body>
@@ -981,6 +1380,108 @@
 </a>
    
     </section>
+    <!-- PRICING & SERVICE AREAS -->
+<section class="pricing-area-section">
+
+    <h2 class="section-header" data-aos="fade-up">
+        Our Pricing & Service Areas 
+    </h2>
+
+    <p class="section-sub" data-aos="fade-up" data-aos-delay="100">
+        Simple pricing. Premium service. Serving some of Nairobi's finest neighbourhoods.
+    </p>
+
+    <div class="pricing-area-grid">
+
+        <!-- Pricing -->
+        <div class="pricing-card" data-aos="fade-right">
+
+            <h3>
+                <i class="fa-solid fa-tags"></i>
+                Starting Prices
+            </h3>
+
+            <div class="price-item">
+                <span>Groceries & Shopping</span>
+                <strong>From KSh 300</strong>
+            </div>
+
+            <div class="price-item">
+                <span>Quick Deliveries</span>
+                <strong>From KSh 300</strong>
+            </div>
+
+            <div class="price-item">
+                <span>Important Documents</span>
+                <strong>From KSh 300</strong>
+            </div>
+
+            <div class="price-item">
+                <span>Pharmacy Pickups</span>
+                <strong>From KSh 300</strong>
+            </div>
+
+            <div class="price-item">
+                <span>Laundry Logistics</span>
+                <strong>From KSh 300</strong>
+            </div>
+
+            <div class="price-item">
+                <span>Queue Standing</span>
+                <strong>From KSh 500/hr</strong>
+            </div>
+
+            <div class="price-item">
+                <span>Custom Errands</span>
+                <strong>Request Quote</strong>
+            </div>
+
+            <p class="pricing-note">
+                Final pricing depends on distance, waiting time, urgency and task complexity.
+                We'll always confirm the total cost before starting your errand.
+            </p>
+
+        </div>
+
+        <!-- Areas -->
+        <div class="areas-card" data-aos="fade-left">
+
+            <h3>
+                <i class="fa-solid fa-location-dot"></i>
+                Areas We Serve
+            </h3>
+
+            <div class="areas-grid">
+
+                <div><i class="fa-solid fa-location-dot"></i> Kilimani</div>
+
+                <div><i class="fa-solid fa-location-dot"></i> Kileleshwa</div>
+
+                <div><i class="fa-solid fa-location-dot"></i> Lavington</div>
+
+                <div><i class="fa-solid fa-location-dot"></i> Karen</div>
+
+                <div><i class="fa-solid fa-location-dot"></i> Muthaiga</div>
+
+                <div><i class="fa-solid fa-location-dot"></i> Runda</div>
+
+            </div>
+
+            <div class="service-note">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                Don't see your location?
+
+                Contact us on WhatsApp and we'll let you know if we can accommodate your request.
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- HOW IT WORKS TIMELINE -->
     <section id="how-it-works" class="process">
@@ -1057,23 +1558,88 @@
     </section>
 
     <!-- FOUNDERS PROFILE SECTION -->
-    <section id="team" class="founders">
-        <h2 class="section-header" data-aos="fade-up">Meet The Team</h2>
-        <p class="section-sub" style="color: #94A3B8;" data-aos="fade-up" data-aos-delay="100">The friendly faces making it happen behind the scenes</p>
+   <section id="team" class="founders">
+    <h2 class="section-header" data-aos="fade-up">Meet The Team</h2>
+    <p class="section-sub" style="color: var(--text-muted);" data-aos="fade-up" data-aos-delay="100">The friendly faces making it happen behind the scenes</p>
+    
+    <div class="founders-container">
+        <!-- Jaden's Card -->
+        <div class="founder-profile clickable-card" data-aos="fade-right" data-aos-delay="200" onclick="openFounderModal('jaden')">
+            <div class="founder-avatar"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Jaden Murimi</h3>
+            <p>Co-Founder & Operations</p>
+        </div>
         
-        <div class="founders-container">
-            <div class="founder-profile" data-aos="fade-right" data-aos-delay="200">
-                <div class="founder-avatar"><i class="fa-solid fa-user-tie"></i></div>
-                <h3>Jaden Murimi</h3>
-                <p>Co-Founder & Operations</p>
-            </div>
-            <div class="founder-profile" data-aos="fade-left" data-aos-delay="300">
-                <div class="founder-avatar"><i class="fa-solid fa-user-gear"></i></div>
-                <h3>Josephine Murimi</h3>
-                <p>Co-Founder & Customer Relations</p>
+        <!-- Josephine's Card -->
+        <div class="founder-profile clickable-card" data-aos="fade-left" data-aos-delay="300" onclick="openFounderModal('josephine')">
+            <div class="founder-avatar"><i class="fa-solid fa-user-gear"></i></div>
+            <h3>Josephine Murimi</h3>
+            <p>Co-Founder & Customer Relations</p>
+        </div>
+    </div>
+</section>
+
+<!-- Jaden's Detail Popup Overlay -->
+<div id="jaden-modal" class="founder-modal" onclick="closeFounderModal('jaden')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeFounderModal('jaden')">&times;</span>
+        <div class="modal-body">
+            <div class="modal-avatar-large"><i class="fa-solid fa-user-tie"></i></div>
+            <h3>Jaden Murimi</h3>
+            <p class="modal-role">Co-Founder & Operations</p>
+            
+            <hr class="modal-divider" />
+            
+            <h4>The Logistics Mastermind</h4>
+            <p class="modal-desc">Jaden is the engine under the hood of Runnit Errands. He coordinates our runners, plans the most efficient routes across town, and ensures that from the moment you place an order, the wheels are actively in motion.</p>
+            
+            <!-- Direct Founder phone link inside popup -->
+            <a href="tel:0716097755" class="modal-contact-row">
+                <div class="modal-contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="modal-contact-text">
+                    <span class="modal-contact-label">Call Direct (Jaden)</span>
+                    0716097755
+                </div>
+            </a>
+
+            <div class="modal-specialties">
+                <span><i class="fa-solid fa-route"></i> Route Planning</span>
+                <span><i class="fa-solid fa-bolt"></i> Fast Dispatch</span>
             </div>
         </div>
-    </section>
+    </div>
+</div>
+
+<!-- Josephine's Detail Popup Overlay -->
+<div id="josephine-modal" class="founder-modal" onclick="closeFounderModal('josephine')">
+    <div class="modal-content" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeFounderModal('josephine')">&times;</span>
+        <div class="modal-body">
+            <div class="modal-avatar-large"><i class="fa-solid fa-user-gear"></i></div>
+            <h3>Josephine Murimi</h3>
+            <p class="modal-role">Co-Founder & Customer Relations</p>
+            
+            <hr class="modal-divider" />
+            
+            <h4>The Client Champion</h4>
+            <p class="modal-desc">Josephine makes sure every errand is handled with a personal, premium touch. She oversees customer care, handles special custom requests, and guarantees that our service feels less like a basic transaction and more like having your own dedicated personal assistant.</p>
+            
+            <!-- Direct Founder phone link inside popup -->
+            <a href="tel:0721850258" class="modal-contact-row">
+                <div class="modal-contact-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="modal-contact-text">
+                    <span class="modal-contact-label">Call Direct (Josephine)</span>
+                    0721850258
+                </div>
+            </a>
+
+            <div class="modal-specialties">
+                <span><i class="fa-solid fa-heart"></i> Client Care</span>
+                <span><i class="fa-solid fa-shield-halved"></i> Premium Quality</span>
+            </div>
+        </div>
+    </div>
+</div>
 
     <!-- FOOTER AREA -->
     <footer>
@@ -1151,6 +1717,24 @@ document.addEventListener('DOMContentLoaded', function() {
             // Opens WhatsApp securely in a new tab
             window.open(whatsappUrl, '_blank');
         });
+    }
+});
+function openFounderModal(founder){
+    document.getElementById(founder + "-modal").classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeFounderModal(founder){
+    document.getElementById(founder + "-modal").classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+document.addEventListener("keydown", function(e){
+    if(e.key === "Escape"){
+        document.querySelectorAll(".founder-modal").forEach(modal=>{
+            modal.classList.remove("active");
+        });
+        document.body.style.overflow = "";
     }
 });
 </script>
