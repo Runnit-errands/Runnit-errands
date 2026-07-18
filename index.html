@@ -1267,6 +1267,37 @@
 
     margin-right:8px;
 }
+/* Premium Badge */
+
+.premium-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:rgba(220,174,66,.12);
+    color:var(--gold-primary);
+    border:1px solid rgba(220,174,66,.35);
+    padding:10px 18px;
+    border-radius:30px;
+    font-weight:700;
+    margin-bottom:20px;
+    font-size:.9rem;
+}
+
+.premium-badge i{
+    color:var(--gold-primary);
+}
+.price-item span{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.price-item i{
+    color:var(--gold-primary);
+    width:22px;
+    text-align:center;
+    font-size:1rem;
+}
     </style>
 </head>
 <body>
@@ -1380,108 +1411,130 @@
 </a>
    
     </section>
-    <!-- PRICING & SERVICE AREAS -->
-<section class="pricing-area-section">
+   <h2 class="section-header" data-aos="fade-up">
+     Premium Concierge Rates & Service Areas
+</h2>
 
-    <h2 class="section-header" data-aos="fade-up">
-        Our Pricing & Service Areas 
-    </h2>
+<p class="section-sub" data-aos="fade-up" data-aos-delay="100">
+    Premium errand services with transparent pricing, serving Nairobi's most prestigious neighbourhoods.
+</p>
 
-    <p class="section-sub" data-aos="fade-up" data-aos-delay="100">
-        Simple pricing. Premium service. Serving some of Nairobi's finest neighbourhoods.
-    </p>
+<div class="pricing-area-grid">
 
-    <div class="pricing-area-grid">
+    <!-- Pricing -->
+    <div class="pricing-card" data-aos="fade-right">
 
-        <!-- Pricing -->
-        <div class="pricing-card" data-aos="fade-right">
+        <div class="premium-badge">
+            <i class="fa-solid fa-crown"></i>
+            Premium Concierge Service
+        </div>
 
-            <h3>
-                <i class="fa-solid fa-tags"></i>
-                Starting Prices
-            </h3>
+        <h3>
+            <i class="fa-solid fa-tags"></i>
+            Service Rates
+        </h3>
 
-            <div class="price-item">
-                <span>Groceries & Shopping</span>
-                <strong>From KSh 300</strong>
-            </div>
+       <div class="price-item">
+    <span><i class="fa-solid fa-cart-shopping"></i> Grocery Shopping</span>
+    <strong>From KSh 800</strong>
+</div>
 
-            <div class="price-item">
-                <span>Quick Deliveries</span>
-                <strong>From KSh 300</strong>
-            </div>
+<div class="price-item">
+    <span><i class="fa-solid fa-box"></i> Parcel Delivery</span>
+    <strong>From KSh 700</strong>
+</div>
 
-            <div class="price-item">
-                <span>Important Documents</span>
-                <strong>From KSh 300</strong>
-            </div>
+<div class="price-item">
+    <span><i class="fa-solid fa-file-lines"></i> Important Document Delivery</span>
+    <strong>From KSh 700</strong>
+</div>
 
-            <div class="price-item">
-                <span>Pharmacy Pickups</span>
-                <strong>From KSh 300</strong>
-            </div>
+<div class="price-item">
+    <span><i class="fa-solid fa-money-check-dollar"></i> Bills & Banking Errands</span>
+    <strong>From KSh 900</strong>
+</div>
 
-            <div class="price-item">
-                <span>Laundry Logistics</span>
-                <strong>From KSh 300</strong>
-            </div>
+<div class="price-item">
+    <span><i class="fa-solid fa-prescription-bottle-medical"></i> Pharmacy Pickups</span>
+    <strong>From KSh 700</strong>
+</div>
 
-            <div class="price-item">
-                <span>Queue Standing</span>
-                <strong>From KSh 500/hr</strong>
-            </div>
+<div class="price-item">
+    <span><i class="fa-solid fa-shirt"></i> Laundry Pickup & Delivery</span>
+    <strong>From KSh 800</strong>
+</div>
 
-            <div class="price-item">
-                <span>Custom Errands</span>
-                <strong>Request Quote</strong>
-            </div>
+<div class="price-item">
+    <span><i class="fa-solid fa-gift"></i> Gifts & Flower Delivery</span>
+    <strong>From KSh 800</strong>
+</div>
 
-            <p class="pricing-note">
-                Final pricing depends on distance, waiting time, urgency and task complexity.
-                We'll always confirm the total cost before starting your errand.
-            </p>
+<div class="price-item">
+    <span><i class="fa-solid fa-hourglass-half"></i> Queue Standing</span>
+    <strong>From KSh 1,500 / Hour</strong>
+</div>
+
+<div class="price-item">
+    <span><i class="fa-solid fa-star"></i> Bespoke / Custom Errands</span>
+    <strong>From KSh 1,000</strong>
+</div>
+
+        <p class="pricing-note">
+            <strong>Transparent Pricing.</strong><br><br>
+            Final pricing depends on the distance, waiting time, urgency, and complexity of your request.
+            Every errand is professionally assessed and quoted before work begins, ensuring complete transparency with <strong>no hidden charges.</strong>
+        </p>
+
+    </div>
+
+    <!-- Service Areas -->
+    <div class="areas-card" data-aos="fade-left">
+
+        <div class="premium-badge">
+            <i class="fa-solid fa-map-location-dot"></i>
+            Current Coverage
+        </div>
+
+        <h3>
+            <i class="fa-solid fa-location-dot"></i>
+            Areas We Serve
+        </h3>
+
+        <div class="areas-grid">
+
+            <div><i class="fa-solid fa-location-dot"></i> Kilimani</div>
+
+            <div><i class="fa-solid fa-location-dot"></i> Kileleshwa</div>
+
+            <div><i class="fa-solid fa-location-dot"></i> Lavington</div>
+
+            <div><i class="fa-solid fa-location-dot"></i> Karen</div>
+
+            <div><i class="fa-solid fa-location-dot"></i> Muthaiga</div>
+
+            <div><i class="fa-solid fa-location-dot"></i> Runda</div>
 
         </div>
 
-        <!-- Areas -->
-        <div class="areas-card" data-aos="fade-left">
+        <div class="service-note">
 
-            <h3>
-                <i class="fa-solid fa-location-dot"></i>
-                Areas We Serve
-            </h3>
+            <i class="fa-solid fa-circle-info"></i>
 
-            <div class="areas-grid">
+            <strong>Expanding Across Nairobi.</strong><br><br>
 
-                <div><i class="fa-solid fa-location-dot"></i> Kilimani</div>
+            We're currently focused on providing fast, reliable, and premium errand services within these neighbourhoods to ensure exceptional response times and service quality.
 
-                <div><i class="fa-solid fa-location-dot"></i> Kileleshwa</div>
+            <br><br>
 
-                <div><i class="fa-solid fa-location-dot"></i> Lavington</div>
+            Don't see your area listed?
 
-                <div><i class="fa-solid fa-location-dot"></i> Karen</div>
-
-                <div><i class="fa-solid fa-location-dot"></i> Muthaiga</div>
-
-                <div><i class="fa-solid fa-location-dot"></i> Runda</div>
-
-            </div>
-
-            <div class="service-note">
-
-                <i class="fa-solid fa-circle-info"></i>
-
-                Don't see your location?
-
-                Contact us on WhatsApp and we'll let you know if we can accommodate your request.
-
-            </div>
+            Contact us on WhatsApp—we may still be able to accommodate your request depending on the nature of the errand and your location.
 
         </div>
 
     </div>
 
-</section>
+</div>
 
     <!-- HOW IT WORKS TIMELINE -->
     <section id="how-it-works" class="process">
