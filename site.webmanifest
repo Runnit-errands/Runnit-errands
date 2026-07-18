@@ -1,0 +1,20 @@
+{
+  "name": "Runnit Errands",
+  "short_name": "Runnit",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0A1B3A",
+  "theme_color": "#0A1B3A",
+  "icons": [
+    {
+      "src": "logo.png.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "logo.png.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
